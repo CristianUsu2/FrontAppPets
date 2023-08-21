@@ -9,7 +9,7 @@ export const NavBar=()=>{
     return (
        <>
        
-       <Navbar expand="lg" className="navbar navbar-dark bg-dark col-sm-12 col-md-12 col-lg-12 col-xl-12">
+       <Navbar expand="lg" className="navbar navbar-dark bg-dark col-sm-12 col-md-12 col-lg-12 col-xl-12 sticky-top">
       <Container>
         <Navbar.Brand href="#home"><Image src={logo} alt='Logo'/></Navbar.Brand>
         <Navbar.Toggle />

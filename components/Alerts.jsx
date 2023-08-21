@@ -1,11 +1,22 @@
-export const AlertSuccess = () => {
+import {Alert} from "react-bootstrap"
+
+export const AlertSuccess = ({ text}) => {
   return (
     <>
-      <Alert key={variant} variant="success">
-        Se ejecuto una operacion
-        <Alert.Link href="#">an example link</Alert.Link>. Give it a click if
-        you like.
+      <Alert key="success" variant="success">
+        {text}
+       
       </Alert>
     </>
   );
 };
+
+export const AlertCancel=({text})=>{
+  return (
+    <>
+      <Alert key="error" variant="error">
+       {text}
+      </Alert>
+    </>
+  );
+}

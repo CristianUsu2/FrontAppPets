@@ -6,6 +6,7 @@ import styles from "./page.module.css";
 import { CardV } from "@/components/Cards";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Link from "next/link";
 
 export default function Home() {
   const [pets, setPets] = useState("");
@@ -15,7 +16,7 @@ export default function Home() {
 
   const GetAllPetsApi = async () => {
     const request = await axios.get(
-      `${process.env.NEXT_PUBLIC_SERVER}/PetsAll`
+      `${process.env.NEXT_PUBLIC_SERVER}PetsAll`
     );
     const data = await request.data;
     setPets(data);
@@ -29,12 +30,15 @@ export default function Home() {
 
         <Row>
          <Col lg={12} md={12} sm={12} xs={12}>
+          <Link href="/Mascotas/CrearMascota">
           <Button variant="success">Crear mascota</Button>
+          </Link>
+       
          </Col> 
         {pets.length !=0 ? 
           pets.map(e=>
-            <Col lg={4} md={12} sm={12} xs={12} className="mt-4 " >
-            <CardV className="ml-3 mr-3 col-md-12" data={e} key={e.IdMascota} />
+            <Col  className="mt-4 " >
+            <CardV className="ml-3 mr-3 " data={e} key={e.IdMascota} />
             </Col>
             
           )
